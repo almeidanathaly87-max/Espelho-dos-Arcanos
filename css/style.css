@@ -1,0 +1,323 @@
+/*RESET*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*BODY / FUNDO GALAXY*/
+
+body{
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    color:white;
+
+    background: radial-gradient(circle at center, #1a1a2e 0%, #221a44 40%, #05050a 100%);
+
+}
+
+/*NEBULOSA SUAVE*/
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background: radial-gradient(circle at 20% 30%, rgba(120, 80, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 25%, rgba(180, 140, 255, 0.10), transparent 25%),
+    radial-gradient(circle at 60% 75%, rgba(90, 60, 180, 0.16), transparent 30%),
+    radial-gradient(circle at 35% 80%, rgba(140, 110, 255, 0.10), transparent 28%);
+
+}
+
+/*MAIN*/
+
+.intro{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*ESTRELAS DO FUNDO*/
+
+#stars{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-star{
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/*HERO CONTENT*/
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*TÍTULO*/
+
+.titulo-principal{
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    line-height: 1.1;
+
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6),
+                 0 0 18px rgba(180, 150, 255, 0.5);
+}
+
+/*SUBTÍTULO*/
+
+.subtitulo{
+    margin: 10px;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    opacity: 0.82;
+}
+
+/*CÍRCULO DAS ESTRELAS*/
+
+.stars-circle{
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    animation:girarEstrelas 26s linear infinite;
+
+    z-index:2;
+
+}
+/*ESTRELAS DO CÍRCULLO*/
+
+.star{
+    position: absolute;
+    font-size: 20px;
+}
+
+.white{
+    color: #f3f2ff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+                 0 0 14px rgba(255, 255, 255, 0.4);
+}
+
+.purple{
+    color: #b49cff;
+    text-shadow: 0 0 8px rgba(180, 156, 255, 0.8),
+                 0 0 14px rgba(180, 156, 255, 0.4);
+}
+
+/*POSIÇÃO DAS 8 ESTRELAS*/
+
+.star-1{
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.star-2{
+    top: 70px;
+    right: 75px;
+}
+
+.star-3{
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+}
+
+.star-4{
+    bottom: 70px;
+    right: 75px;
+}
+
+.star-5{
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.star-6{
+    bottom: 70px;
+    left: 75px;
+}
+
+.star-7{
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+}
+
+.star-8{
+    top: 70px;
+    left: 75px;
+}
+
+/*BOTÃO*/
+
+.button-area{
+    position: absolute;
+    right: 120px;
+    bottom: 90px;
+    z-index: 2;
+}
+
+.start-button{
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+
+    background: #d6c8ff;
+    color: #1a1a2e;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 0 10px rgba(180, 150, 255, 0.6);
+
+    animation: brilhoBotao 2.5s infinite alternate;
+}
+
+.start-button:hover{
+    background: #4b2e83;
+    color: white;
+    box-shadow: 0 0 18px rgba(120, 80, 255, 0.9);
+}
+
+/*ANIMAÇÕES*/
+
+@keyframes girarEstrelas{
+    from{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes brilhoBotao{
+    from{
+        box-shadow: 0 0 6px rgba(180, 150, 255, 0.4);
+    }
+    to{
+        box-shadow: 0 0 18px rgba(180, 150, 255, 0.9);
+    }
+}
+
+@keyframes piscar{
+    from{
+        opacity: 0.3;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes flutuar{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-12px);
+    }
+}
+
+/*SEGUNDA TELA*/
+
+.next-screen{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: radial-gradient(circle at center, rgba(26, 26, 46, 0.96) 0%, rgba(34, 26, 68, 0.96) 45%, rgba(5, 5, 10,0.98) 100%);
+
+    z-index: 10;
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.next-screen.hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.next-content{
+    max-width: 620px;
+    text-align: center;
+    padding: 32px 24px;
+    border: 1px solid rgba(180, 156, 255, 0.18);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 24px rgba(120, 80, 255, 0.12);
+
+    color: white;
+    z-index: 11;
+}
+
+.next-title{
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35), 0 0 18px rgba(180, 150, 255, 0.18);
+}
+
+.next-text{
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 28px;
+}
+
+.next-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.secondary-button{
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 1px solid rgba(214, 200, 255, 0.45);
+    background: transparent;
+    color: #d6c8ff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.secondary-button:hover{
+    background: rgba(214, 200, 255, 0.08);
+    box-shadow: 0 0 14px rgba(180, 150, 255, 0.25);
+}
